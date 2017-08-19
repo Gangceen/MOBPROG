@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="mobprog.apc.seaside.MainActivity">
+    tools:context="mobprog.apc.seaside.MainActivity"
+    tools:ignore="ExtraText">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -13,6 +14,19 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+
+    />
 
 </android.support.design.widget.CoordinatorLayout>
