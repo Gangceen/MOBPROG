@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "109544930635",
+    "firebase_url": "https://seaside-mobprog.firebaseio.com",
+    "project_id": "seaside-mobprog",
+    "storage_bucket": "seaside-mobprog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109544930635:android:865ee0421fddcc96",
+        "android_client_info": {
+          "package_name": "mobprog.apc.seaside"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109544930635-607ur94ks7mb5fuh4p65isnfak6mriv7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mobprog.apc.seaside",
+            "certificate_hash": "020e364b6f5fc07009161c13911d84d497e8018b"
+          }
+        },
+        {
+          "client_id": "109544930635-54l5ld396nc1rdlvmncq4gev8k8aopjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtB3ySuEasdVyyQD8WflOBrgTY3uZ3Mm4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109544930635-54l5ld396nc1rdlvmncq4gev8k8aopjd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
