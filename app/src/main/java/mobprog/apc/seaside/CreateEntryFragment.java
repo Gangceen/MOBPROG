@@ -15,9 +15,11 @@ import android.widget.EditText;
 
 public class CreateEntryFragment extends Fragment {
 
+    private final String TAG = "Seaside";
     private EditText title;
     private EditText content;
     private Button submit_entry;
+    private DbHelper db;
 
     @Nullable
     @Override
@@ -42,11 +44,21 @@ public class CreateEntryFragment extends Fragment {
                 clickSubmitButton(v);
             }
         });
+
+        db = DbHelper.getInstance();
+
     }
 
     public void clickSubmitButton(View view){
         Entry e = new Entry();
         e.setEntryTitle(title.getText().toString());
         e.setEntryContent(content.getText().toString());
+        db.addEntry(e);
+        clearTextFields();
+    }
+
+    private void clearTextFields(){
+        title.setText("");
+        content.setText("");
     }
 }
