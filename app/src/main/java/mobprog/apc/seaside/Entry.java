@@ -10,6 +10,7 @@ public class Entry implements Serializable{
 
     private String entryTitle;
     private String entryContent;
+    private String entryEmail;
 
     public String getEntryTitle() {
         return entryTitle;
@@ -20,10 +21,18 @@ public class Entry implements Serializable{
     };
 
     public String getEntryContent() {
-        return entryTitle;
+        return entryContent;
     }
 
     public void setEntryContent(String entryContent){
         this.entryContent = entryContent;
+    };
+
+    public String getEntryEmail() {
+        return entryEmail;
+    }
+
+    public void setEntryEmail(String entryEmail){
+        this.entryEmail = entryEmail;
     };
 }
