@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,9 +36,6 @@ public class CreateEntryFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NavigationView navigationView = (NavigationView)view.findViewById(R.id.nav_view);
-        View hView = navigationView.getHeaderView(0);
-        user_Email = (TextView)hView.findViewById(R.id.textView2);
         initializeComponents(view);
     }
 
@@ -59,7 +57,7 @@ public class CreateEntryFragment extends Fragment {
 
     public void clickSubmitButton(View view){
         Entry e = new Entry();
-        e.setEntryEmail(user_Email.getText().toString());
+        //e.setEntryEmail(user_Email.getText().toString());
         e.setEntryTitle(title.getText().toString());
         e.setEntryContent(content.getText().toString());
         db.addEntry(e);
@@ -73,6 +71,9 @@ public class CreateEntryFragment extends Fragment {
     }
 
     private void returnHome(){
-
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        if (fm.getBackStackEntryCount()>0){
+            fm.popBackStack();
+        }
     }
 }

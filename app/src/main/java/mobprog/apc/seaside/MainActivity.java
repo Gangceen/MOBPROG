@@ -47,8 +47,10 @@ public class MainActivity extends AppCompatActivity
         addButton.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.layout.create_entry, null);
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.MainScreen, new CreateEntryFragment())
+                            .addToBackStack(null)
+                            .commit();
                     }
                 }
         );
