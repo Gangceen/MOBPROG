@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -24,7 +25,6 @@ public class CreateEntryFragment extends Fragment {
     private EditText title;
     private EditText content;
     private Button submit_entry;
-    public TextView user_Email;
     private DbHelper db;
 
     @Nullable
@@ -40,9 +40,9 @@ public class CreateEntryFragment extends Fragment {
     }
 
     private void initializeComponents(View view){
-        title = (EditText)view.findViewById(R.id.entry_title);
-        content = (EditText)view.findViewById(R.id.entry_content);
-        submit_entry = (Button)view.findViewById(R.id.submit_button);
+        title = view.findViewById(R.id.entry_title);
+        content = view.findViewById(R.id.entry_content);
+        submit_entry = view.findViewById(R.id.submit_button);
 
         submit_entry.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -61,6 +61,7 @@ public class CreateEntryFragment extends Fragment {
         e.setEntryTitle(title.getText().toString());
         e.setEntryContent(content.getText().toString());
         db.addEntry(e);
+        Toast.makeText(getActivity(), "Entry submitted successfully!", Toast.LENGTH_SHORT).show();
         clearTextFields();
         returnHome();
     }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="130dp"
-    android:layout_height="90dp"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
     android:layout_marginBottom="8dp"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
@@ -22,55 +21,106 @@
     app:layout_constraintTop_toBottomOf="@+id/toolbar"
     app:layout_constraintVertical_bias="0.018">
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="0dp"
-            android:layout_toStartOf="@+id/imageButton8"
+            android:id="@+id/entryFavorite"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:background="@android:color/transparent"
             android:contentDescription=""
-            app:srcCompat="@android:drawable/btn_star_big_off" />
+            app:srcCompat="@android:drawable/btn_star_big_off"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintTop_creator="1"
+            app:layout_constraintRight_toLeftOf="@+id/entryShare"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/guideline11"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline9"
+            android:layout_marginStart="8dp" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="0dp"
-            android:layout_toStartOf="@+id/imageButton6"
+            android:id="@+id/entryShare"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_menu_share" />
+            app:srcCompat="@drawable/ic_menu_share"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintTop_creator="1"
+            app:layout_constraintLeft_toRightOf="@+id/entryFavorite"
+            app:layout_constraintRight_toLeftOf="@+id/entryDelete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="0dp"
+            android:id="@+id/entryDelete"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@android:drawable/ic_menu_delete" />
+            app:srcCompat="@android:drawable/ic_menu_delete"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintTop_creator="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/entryShare"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/entryContent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/imageButton2"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
+            android:layout_height="75dp"
+            android:layout_marginBottom="-19dp"
+            android:autoSizeTextType="uniform"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/entryTitle"
+            tools:ignore="RelativeOverlap"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintTop_creator="1"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <TextView
+            android:id="@+id/entryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
             android:autoSizeTextType="uniform"
             android:text="@string/title"
             android:textColor="@android:color/white"
             android:textSize="10sp"
-            tools:ignore="RelativeOverlap" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/entryContent"
+            tools:ignore="RelativeOverlap"
+            tools:layout_constraintTop_creator="1" />
 
-    </RelativeLayout>
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline9"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="89dp"
+            tools:layout_editor_absoluteX="188dp" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline11"
+            app:layout_constraintGuide_percent="0.75"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="196dp"
+            tools:layout_editor_absoluteX="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>
