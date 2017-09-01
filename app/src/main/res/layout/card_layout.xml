@@ -72,9 +72,8 @@
 
         <TextView
             android:id="@+id/entryContent"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="75dp"
-            android:layout_marginBottom="-19dp"
             android:autoSizeTextType="uniform"
             android:textColor="@android:color/white"
             android:textSize="10sp"
@@ -89,7 +88,7 @@
 
         <TextView
             android:id="@+id/entryTitle"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_marginTop="3dp"
             android:autoSizeTextType="uniform"

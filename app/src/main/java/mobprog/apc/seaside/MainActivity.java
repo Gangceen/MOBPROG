@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ImageButton addButton = (ImageButton) findViewById(R.id.imageButton3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Intent intent = getIntent();
         String email = intent.getStringExtra(sign_in.User_Email);
+        setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,22 +40,13 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             View hView = navigationView.getHeaderView(0);
-            TextView userEmail = (TextView) hView.findViewById(R.id.textView2);
+            TextView userEmail = hView.findViewById(R.id.textView2);
             userEmail.setText(email);
         navigationView.setNavigationItemSelectedListener(this);
 
-        addButton.setOnClickListener(
-                new Button.OnClickListener(){
-                    public void onClick(View v){
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.MainScreen, new CreateEntryFragment())
-                            .addToBackStack(null)
-                            .commit();
-                    }
-                }
-        );
-
-
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.MainScreen, new CreateEntryFragment())
+                .commit();
     }
 
     @Override
@@ -91,15 +82,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_about) {
-            // Handle the camera action
+        if (id == R.id.nav_my_entries) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.MainScreen, new ListEntryFragment())
+                    .addToBackStack(null)
+                    .commit();
+        } else if (id == R.id.nav_about) {
+
         } else if (id == R.id.nav_help) {
-
-        } else if (id == R.id.nav_settings) {
-
-        } else if (id == R.id.nav_favorites) {
-
-        } else if (id == R.id.nav_search) {
 
         } else if (id == R.id.nav_logout) {
 

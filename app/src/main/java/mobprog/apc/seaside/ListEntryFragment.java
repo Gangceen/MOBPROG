@@ -16,11 +16,11 @@ import android.widget.ImageButton;
  * Created by Ced on 31/08/2017.
  */
 
-public class ListFragment extends Fragment {
+public class ListEntryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.content_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
 
         if (view instanceof RecyclerView){
             DbHelper db = DbHelper.getInstance();
@@ -31,4 +31,5 @@ public class ListFragment extends Fragment {
         }
         return view;
     }
+
 }

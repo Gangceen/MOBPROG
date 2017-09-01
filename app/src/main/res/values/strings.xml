@@ -21,4 +21,7 @@
     </string>
     <string name="my_entries">My Entries</string>
     <string name="title"></string>
+    <string name="entry_title">TITLE</string>
+    <string name="submit_btn">Submit</string>
+    <string name="entry_content">CONTENT</string>
 </resources>

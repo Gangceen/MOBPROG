@@ -18,17 +18,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public RecyclerAdapter() { db = DbHelper.getInstance() ;}
 
     @Override
-    public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(RecyclerAdapter.ViewHolder holder, int position) {
+            public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = db.getEntryList().get(position);
         holder.entryTitle.setText(holder.mItem.getEntryTitle());
-        holder.entryTitle.setText(holder.mItem.getEntryContent());
+        holder.entryContent.setText(holder.mItem.getEntryContent());
     }
 
     @Override
@@ -53,6 +53,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             entryFavorite = view.findViewById(R.id.entryFavorite);
             entryShare = view.findViewById(R.id.entryShare);
             entryDelete = view.findViewById(R.id.entryDelete);
+        }
+
+        @Override
+        public String toString() {
+            return super.toString();
         }
     }
 

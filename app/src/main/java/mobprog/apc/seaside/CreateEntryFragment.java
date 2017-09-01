@@ -22,6 +22,8 @@ import org.w3c.dom.Text;
 public class CreateEntryFragment extends Fragment {
 
     private final String TAG = "Seaside";
+    private final String TITLE = "TITLE";
+    private final String CONTENT = "CONTENT";
     private EditText title;
     private EditText content;
     private Button submit_entry;
