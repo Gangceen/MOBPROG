@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -23,7 +24,7 @@ public class ListEntryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
         if (view instanceof RecyclerView){
-            DbHelper db = DbHelper.getInstance();
+            final DbHelper db = DbHelper.getInstance();
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new LinearLayoutManager(context));

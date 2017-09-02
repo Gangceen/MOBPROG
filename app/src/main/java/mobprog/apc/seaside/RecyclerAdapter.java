@@ -2,6 +2,8 @@ package mobprog.apc.seaside;
 
 
 import android.media.Image;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AlertDialogLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,10 +27,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     @Override
-            public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = db.getEntryList().get(position);
         holder.entryTitle.setText(holder.mItem.getEntryTitle());
         holder.entryContent.setText(holder.mItem.getEntryContent());
+        holder.detailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
     }
 
     @Override
@@ -40,9 +48,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public final View mView;
         public final TextView entryTitle;
         public final TextView entryContent;
-        public final ImageButton entryFavorite;
-        public final ImageButton entryShare;
-        public final ImageButton entryDelete;
+        public final ImageButton detailsButton;
+        public final ImageButton deleteButton;
         public Entry mItem;
 
         public ViewHolder (View view) {
@@ -50,15 +57,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             mView = view;
             entryTitle = view.findViewById(R.id.entryTitle);
             entryContent = view.findViewById(R.id.entryContent);
-            entryFavorite = view.findViewById(R.id.entryFavorite);
-            entryShare = view.findViewById(R.id.entryShare);
-            entryDelete = view.findViewById(R.id.entryDelete);
-        }
-
-        @Override
-        public String toString() {
-            return super.toString();
+            detailsButton = view.findViewById(R.id.details_button);
+            deleteButton = view.findViewById(R.id.delete_button);
         }
     }
-
 }

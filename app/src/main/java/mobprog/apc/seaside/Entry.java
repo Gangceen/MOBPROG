@@ -1,6 +1,9 @@
 package mobprog.apc.seaside;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by student on 8/26/2017.
@@ -10,7 +13,6 @@ public class Entry implements Serializable{
 
     private String entryTitle;
     private String entryContent;
-    private String entryEmail;
 
     public String getEntryTitle() {
         return entryTitle;
@@ -18,7 +20,7 @@ public class Entry implements Serializable{
 
     public void setEntryTitle(String entryTitle){
         this.entryTitle = entryTitle;
-    };
+    }
 
     public String getEntryContent() {
         return entryContent;
@@ -26,13 +28,5 @@ public class Entry implements Serializable{
 
     public void setEntryContent(String entryContent){
         this.entryContent = entryContent;
-    };
-
-    public String getEntryEmail() {
-        return entryEmail;
-    }
-
-    public void setEntryEmail(String entryEmail){
-        this.entryEmail = entryEmail;
     };
 }

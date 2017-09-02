@@ -15,15 +15,15 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.Calendar;
+
 /**
  * Created by student on 8/26/2017.
  */
 
 public class CreateEntryFragment extends Fragment {
 
-    private final String TAG = "Seaside";
-    private final String TITLE = "TITLE";
-    private final String CONTENT = "CONTENT";
+    private TextView user;
     private EditText title;
     private EditText content;
     private Button submit_entry;
@@ -42,6 +42,7 @@ public class CreateEntryFragment extends Fragment {
     }
 
     private void initializeComponents(View view){
+        user = view.findViewById(R.id.textView2);
         title = view.findViewById(R.id.entry_title);
         content = view.findViewById(R.id.entry_content);
         submit_entry = view.findViewById(R.id.submit_button);
@@ -59,24 +60,15 @@ public class CreateEntryFragment extends Fragment {
 
     public void clickSubmitButton(View view){
         Entry e = new Entry();
-        //e.setEntryEmail(user_Email.getText().toString());
         e.setEntryTitle(title.getText().toString());
         e.setEntryContent(content.getText().toString());
         db.addEntry(e);
         Toast.makeText(getActivity(), "Entry submitted successfully!", Toast.LENGTH_SHORT).show();
         clearTextFields();
-        returnHome();
     }
 
     private void clearTextFields(){
         title.setText("");
         content.setText("");
-    }
-
-    private void returnHome(){
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        if (fm.getBackStackEntryCount()>0){
-            fm.popBackStack();
-        }
     }
 }
