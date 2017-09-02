@@ -46,7 +46,7 @@
         <TextView
             android:id="@+id/entryContent"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="51dp"
             android:autoSizeTextType="uniform"
             android:textColor="@android:color/white"
             android:textSize="10sp"
@@ -61,25 +61,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="49dp"
+            android:layout_height="67dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
             <ImageButton
                 android:id="@+id/details_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.08"
+                android:layout_width="64dp"
+                android:layout_height="52dp"
                 android:background="@android:color/transparent"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
+                app:srcCompat="@android:drawable/ic_dialog_info"
+                android:layout_weight="0.04" />
 
-            <ImageButton
-                android:id="@+id/delete_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.08"
-                android:background="@android:color/transparent"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
         </LinearLayout>
 
     </LinearLayout>

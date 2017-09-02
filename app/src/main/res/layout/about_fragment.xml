@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/aboutFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/about_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/seaside_about_header" />
+
+    <TextView
+        android:id="@+id/about_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEASIDE is a journal application that helps users to be able to express thoughts either privately or publicly. "
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/about_text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We decided to name our application SEASIDE because studies show that it being beside one has great mental health effects. One is that it alters the brain waves alters also when a person hears the waves making it more relaxed. Relaxing is also one way to rejuvenate the mind and body and also lessen stress."
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/space_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/about_text_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is the aim of our application, to help lessen everyday stress through journaling. Keeping a journal is very beneficial and not a lot of people know this. A lot of articles have already tackled the benefits of keeping a journal. Examples are stretching your IQ, helping you heal in different aspects - emotionally, physically and psychologically, boosting your self confidence and improving your creativity."
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+</LinearLayout>
